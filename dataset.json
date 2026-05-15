@@ -1,0 +1,110 @@
+[
+  {
+    "input_text": "Neural networks are computational models inspired by the human brain. They consist of layers of interconnected nodes called neurons. Each neuron receives input, processes it, and passes output to the next layer. Neural networks learn by adjusting the weights of connections based on errors in their predictions. This process is called backpropagation.",
+    "target_text": "Neural networks are brain-inspired models with layered neurons that learn by adjusting connection weights through backpropagation."
+  },
+  {
+    "input_text": "Machine learning is a subset of artificial intelligence that enables systems to learn from data without being explicitly programmed. There are three main types: supervised learning, unsupervised learning, and reinforcement learning. In supervised learning, the model is trained on labeled data.",
+    "target_text": "Machine learning lets systems learn from data automatically. Its three main types are supervised, unsupervised, and reinforcement learning."
+  },
+  {
+  "input_text": "Machine Learning is a subset of artificial intelligence which focuses mainly on machine learning from their experience and making predictions based on its experience. Machine Learning is a system that can learn from example through self-improvement and without being explicitly coded by programmer. The breakthrough comes with the idea that a machine can singularly learn from the data to produce accurate results.",
+  "target_text": "Machine learning is an AI subset where systems learn from data and past experience to make predictions, improving automatically without being explicitly programmed."
+    },
+    {
+  "input_text": "Traditional programming differs significantly from machine learning. In traditional programming, a programmer codes all the rules in consultation with an expert in the industry for which software is being developed. Each rule is based on a logical foundation; the machine will execute an output following the logical statement. When the system grows complex, more rules need to be written. It can quickly become unsustainable to maintain.",
+  "target_text": "In traditional programming, programmers manually code all rules based on logic, but as systems grow complex these rules become unsustainable — unlike machine learning which learns rules automatically from data."
+},
+{
+  "input_text": "Supervised learning is the most popular paradigm for machine learning. It is the easiest to understand and the simplest to implement. It is very similar to teaching a child with the use of flash cards. Given data in the form of examples with labels, we can feed a learning algorithm these example-label pairs one by one, allowing the algorithm to predict the label for each example, and giving it feedback as to whether it predicted the right answer or not. Over time, the algorithm will learn to approximate the exact nature of the relationship between examples and their labels. When fully-trained, the supervised learning algorithm will be able to observe a new, never-before-seen example and predict a good label for it.",
+  "target_text": "Supervised learning trains algorithms on labeled example-label pairs, giving feedback on predictions until the model learns the relationship between inputs and outputs well enough to accurately label new, unseen data."
+},
+{
+  "input_text": "Unsupervised learning is very much the opposite of supervised learning. It features no labels. Instead, our algorithm would be fed a lot of data and given the tools to understand the properties of the data. From there, it can learn to group, cluster, and/or organize the data in a way such that a human or other intelligent algorithm can come in and make sense of the newly organized data.",
+  "target_text": "Unsupervised learning works without labels, instead finding hidden patterns by automatically grouping and clustering raw data into meaningful structures."
+},
+{
+  "input_text": "Reinforcement learning is the ability of an agent to interact with the environment and find out what is the best outcome. It follows the concept of hit and trial method. The agent is rewarded or penalized with a point for a correct or a wrong answer, and on the basis of the positive reward points gained the model trains itself. And again once trained it gets ready to predict the new data presented to it.",
+  "target_text": "Reinforcement learning trains an agent through trial and error, rewarding correct actions and penalizing wrong ones until the model learns the best strategy for new situations."
+},
+{
+  "input_text": "An AI system is composed of an agent and its environment. The agents act in their environment. The environment may contain other agents. An agent is anything that can perceive its environment through sensors and acts upon that environment. A human agent has sensory organs such as eyes, ears, nose, tongue and skin parallel to the sensors, and other organs such as hands, legs, mouth, for effectors. A robotic agent has cameras and infrared for the sensors, and various motors for effectors. A software agent is a computer program that performs various actions continuously and autonomously on behalf of an individual or an organization.",
+  "target_text": "An AI agent perceives its environment through sensors and acts on it through effectors. Agents can be human, robotic, or software-based, each with different sensing and acting mechanisms."
+},
+{
+  "input_text": "Inductive Reasoning conducts specific observations to make broad general statements. It starts with specific observations and makes a general conclusion. Example: I've seen 100 Birds and all of them were white, therefore all birds are probably white. Deductive Reasoning starts with a general statement and examines the possibilities to reach a specific, logical conclusion. Example: All men of age above 60 years are grandfathers. Sajad is 65 years old. Therefore, Sajad is a grandfather.",
+  "target_text": "Inductive reasoning draws general conclusions from specific observations, while deductive reasoning starts from a general statement to reach a specific logical conclusion."
+},
+{
+  "input_text": "Intelligence is the ability of a system to calculate, reason, learn from experience, store and retrieve information from memory, solve problems, grasp complex ideas, use natural language fluently, classify, and adapt to new situations.",
+  "target_text": "Intelligence is a system's ability to reason, learn from experience, solve problems, understand complex ideas, use language, and adapt to new situations."
+},
+{
+  "input_text": "The Turing Test is the ultimate test for acting humanly. In this test, a computer and a human are both interrogated by a judge. The computer passes the test if the judge cannot tell the difference between the computer and the human based on their responses.",
+  "target_text": "The Turing Test evaluates a machine's ability to act humanly — a computer passes if a human judge cannot distinguish its responses from those of a real human."
+},
+{
+  "input_text": "The Cognitive Modeling Approach requires knowledge of brain function. It involves introspection, which means trying to catch your own thoughts as they go by, and psychological experiments which involve observing a person in action. This approach is the focus of Cognitive Science, which brings together computer models from AI and experimental techniques from psychology to construct theories of the human mind.",
+  "target_text": "The cognitive modeling approach to AI requires understanding brain function through introspection and psychological experiments, combining AI computer models with psychology to build theories of the human mind."
+},
+{
+  "input_text": "The Rational Agent Approach means acting to achieve goals given a set of beliefs. Rational behavior is doing the right thing — the action that is expected to maximize goal achievement. An Intelligent Agent is a system that can perceive its environment and take actions to achieve a specific goal. A Rational Agent is an Intelligent Agent that makes decisions based on logical reasoning and optimizes its behavior to achieve a specific goal.",
+  "target_text": "The rational agent approach focuses on making decisions that maximize goal achievement through logical reasoning, where a rational agent perceives its environment and acts optimally to reach its objective."
+},
+{
+  "input_text": "Weak AI means computers can be programmed to act as if they were intelligent, focusing on automating specific tasks. Strong AI means computers can be programmed to truly think, being capable of learning and thinking like humans do.",
+  "target_text": "Weak AI simulates intelligence to automate specific tasks, while Strong AI aims for genuine human-like thinking and learning capabilities."
+},
+{
+  "input_text": "Human Intelligence includes common sense, judgement, creativity, and beliefs. Humans can communicate effectively, reason critically, but are unable to retain large amounts of data in memory and process data slowly. Artificial Intelligence can replicate human behavior and mental processes, capture and preserve human expertise, respond fast, and understand large amounts of data quickly. However AI has no common sense and may have high development costs.",
+  "target_text": "Human intelligence excels at common sense, creativity, and critical thinking but is limited in memory and processing speed, while AI processes large data quickly and preserves expertise but lacks common sense and can be costly to develop."
+},
+{
+  "input_text": "Artificial Intelligence software uses the techniques of search and pattern matching. Programmers design AI software to give the computer only the problem, not the steps necessary to solve it. Conventional computer software follows a logical series of steps to reach a conclusion. Computer programmers originally designed conventional software that accomplished tasks by completing algorithms.",
+  "target_text": "AI software uses search and pattern matching to solve problems on its own, while conventional computing follows explicit step-by-step algorithms programmed by developers to reach conclusions."
+},
+{
+  "input_text": "Artificial Intelligence is the ability of computers and machines to think and learn like humans. It allows them to solve problems, recognize patterns, make decisions, and even understand language. AI is used in things like virtual assistants such as Siri and Alexa, self-driving cars, and chatbots. A simple way to explain AI is that it is like teaching a computer to think and make decisions on its own, just like a human brain, but much faster.",
+  "target_text": "Artificial Intelligence enables computers to think, learn, and make decisions like humans, allowing them to solve problems, recognize patterns, and understand language in applications like virtual assistants and self-driving cars."
+},
+{
+  "input_text": "AI can perform tasks that normally require human intelligence, such as recognizing speech and images like Siri and facial recognition, making predictions like weather forecasting and stock market trends, automating repetitive tasks like chatbots and email filtering, driving vehicles like self-driving cars, and creating content like AI-generated art, text, and music.",
+  "target_text": "AI performs human-level tasks including speech and image recognition, making predictions, automating repetitive work, driving vehicles, and generating creative content like art and music."
+},
+{
+  "input_text": "AI has some risks, such as job displacement where AI can automate some jobs affecting employment, bias in AI where if AI learns from biased data it can make unfair decisions, privacy concerns where AI can track and analyze personal data, deepfakes and misinformation where AI can create fake videos or spread false news, and lack of control where some advanced AI systems act unpredictably.",
+  "target_text": "Key AI risks include job displacement, biased decision-making from biased data, privacy violations, deepfakes and misinformation, and unpredictable behavior in advanced AI systems."
+},
+{
+  "input_text": "We can take steps to ensure AI is used responsibly. We can develop ethical AI to ensure AI systems are fair and unbiased, improve digital literacy to educate people on how AI works, create regulations where governments and companies should set AI safety rules, and use AI responsibly by avoiding harmful applications and prioritizing human oversight.",
+  "target_text": "To use AI responsibly, we should develop ethical and unbiased AI systems, improve public digital literacy, establish government regulations, and prioritize human oversight to prevent harmful applications."
+},
+{
+  "input_text": "A neural network is a series of algorithms that attempts to recognize underlying relationships in a set of data through a process that mimics the way the human brain operates. Neural networks consist of input, hidden, and output layers. Each layer contains nodes called neurons that are connected to neurons in the next layer. The connections between neurons have weights that are adjusted during training to improve the accuracy of predictions.",
+  "target_text": "Neural networks mimic the human brain using layers of connected neurons with adjustable weights, learning to recognize patterns and make accurate predictions through training."
+},
+{
+  "input_text": "Deep learning is a subset of machine learning that uses neural networks with many hidden layers, called deep neural networks. These deep networks are capable of learning complex patterns from large amounts of data. Deep learning has achieved remarkable results in areas such as image recognition, speech recognition, and natural language processing. It requires large datasets and significant computing power to train effectively.",
+  "target_text": "Deep learning uses multi-layered neural networks to learn complex patterns from large datasets, achieving breakthroughs in image recognition, speech, and natural language processing."
+},
+{
+  "input_text": "Natural Language Processing or NLP is a branch of artificial intelligence that deals with the interaction between computers and human language. It enables computers to understand, interpret, and generate human language in a meaningful way. NLP is used in applications such as chatbots, language translation, sentiment analysis, and speech recognition. It combines computational linguistics with machine learning to process and analyze large amounts of natural language data.",
+  "target_text": "Natural Language Processing enables computers to understand, interpret, and generate human language, powering applications like chatbots, translation, sentiment analysis, and speech recognition."
+},
+{
+  "input_text": "A decision tree is a supervised learning algorithm used for both classification and regression tasks. It works by splitting data into branches based on feature values, forming a tree-like structure of decisions. Each internal node represents a feature, each branch represents a decision rule, and each leaf node represents an outcome. Decision trees are easy to understand and interpret, making them one of the most popular machine learning algorithms.",
+  "target_text": "A decision tree is a supervised learning algorithm that splits data into branches based on feature values, forming a tree of decisions that is easy to interpret for classification and regression tasks."
+},
+{
+  "input_text": "Overfitting occurs when a machine learning model learns the training data too well, including its noise and outliers, resulting in poor performance on new unseen data. Underfitting occurs when a model is too simple to capture the underlying patterns in the data, resulting in poor performance on both training and test data. The goal is to find a balance between overfitting and underfitting, known as the bias-variance tradeoff.",
+  "target_text": "Overfitting happens when a model memorizes training data including noise, while underfitting occurs when a model is too simple to learn patterns. The goal is to balance both through the bias-variance tradeoff."
+},
+{
+  "input_text": "Gradient descent is an optimization algorithm used to minimize the loss function of a machine learning model. It works by iteratively adjusting the model parameters in the direction of the steepest descent of the loss function. The size of each step is determined by the learning rate. A learning rate that is too high can cause the model to overshoot the minimum, while a learning rate that is too low can make training very slow.",
+  "target_text": "Gradient descent minimizes a model's loss function by iteratively adjusting parameters in the steepest descent direction, with the learning rate controlling step size to balance training speed and accuracy."
+},
+{
+  "input_text": "Transfer learning is a machine learning technique where a model trained on one task is reused as the starting point for a model on a different but related task. Instead of training a model from scratch, transfer learning allows us to take advantage of knowledge already learned from large datasets. It is widely used in deep learning, especially in computer vision and natural language processing, where pre-trained models like BERT and VGG are fine-tuned for specific tasks.",
+  "target_text": "Transfer learning reuses a model trained on one task as a starting point for a related task, saving time and resources by leveraging existing knowledge from large datasets instead of training from scratch."
+}
+]
