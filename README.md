@@ -1,4 +1,4 @@
-# AI Lecture Notes Generator 🎤📝
+# AI Lecture Notes Generator 
 
 An AI-powered tool that converts lecture audio into structured notes automatically.
 
@@ -6,10 +6,10 @@ An AI-powered tool that converts lecture audio into structured notes automatical
 Audio → Whisper (speech to text) → Fine-tuned BART (summarization) → Structured Notes
 
 ## Features
-- 🎤 Upload any lecture audio (mp3, wav, m4a)
-- 🧠 AI summarization using fine-tuned BART model
-- 📝 Structured notes with bullet points and key terms
-- 💻 Fully local — no external APIs needed
+- Upload any lecture audio (mp3, wav, m4a)
+- AI summarization using fine-tuned BART model
+- Structured notes with bullet points and key terms
+- Fully local — no external APIs needed
 
 ## Setup
 
