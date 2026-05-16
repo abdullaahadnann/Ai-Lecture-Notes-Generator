@@ -1,20 +1,33 @@
-from transformers import pipeline
+from transformers import BartForConditionalGeneration, BartTokenizer
 
-print("Loading summarization model...")
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+print("Loading your fine-tuned model...")
+model = BartForConditionalGeneration.from_pretrained("./finetuned-bart")
+tokenizer = BartTokenizer.from_pretrained("./finetuned-bart")
 print("Model loaded!")
 
 def summarize_text(text):
-    # split long text into chunks
     max_chunk = 500
     chunks = [text[i:i+max_chunk] for i in range(0, len(text), max_chunk)]
     
     summaries = []
-    
     for chunk in chunks:
-        summary = summarizer(chunk, max_length=120, min_length=40, do_sample=False)
-        summaries.append(summary[0]['summary_text'])
+        inputs = tokenizer(
+            chunk,
+            return_tensors="pt",
+            max_length=512,
+            truncation=True
+        )
+        summary_ids = model.generate(
+            inputs["input_ids"],
+            max_length=128,
+            min_length=30,
+            num_beams=4,
+            early_stopping=True
+        )
+        summary = tokenizer.decode(
+            summary_ids[0],
+            skip_special_tokens=True
+        )
+        summaries.append(summary)
     
-    final_summary = " ".join(summaries)
-    
-    return final_summary
+    return " ".join(summaries)

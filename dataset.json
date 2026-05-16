@@ -1,13 +1,5 @@
 [
   {
-    "input_text": "Neural networks are computational models inspired by the human brain. They consist of layers of interconnected nodes called neurons. Each neuron receives input, processes it, and passes output to the next layer. Neural networks learn by adjusting the weights of connections based on errors in their predictions. This process is called backpropagation.",
-    "target_text": "Neural networks are brain-inspired models with layered neurons that learn by adjusting connection weights through backpropagation."
-  },
-  {
-    "input_text": "Machine learning is a subset of artificial intelligence that enables systems to learn from data without being explicitly programmed. There are three main types: supervised learning, unsupervised learning, and reinforcement learning. In supervised learning, the model is trained on labeled data.",
-    "target_text": "Machine learning lets systems learn from data automatically. Its three main types are supervised, unsupervised, and reinforcement learning."
-  },
-  {
   "input_text": "Machine Learning is a subset of artificial intelligence which focuses mainly on machine learning from their experience and making predictions based on its experience. Machine Learning is a system that can learn from example through self-improvement and without being explicitly coded by programmer. The breakthrough comes with the idea that a machine can singularly learn from the data to produce accurate results.",
   "target_text": "Machine learning is an AI subset where systems learn from data and past experience to make predictions, improving automatically without being explicitly programmed."
     },
