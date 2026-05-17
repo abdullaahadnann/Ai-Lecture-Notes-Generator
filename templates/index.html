@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Lecture Notes Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <span class="header-title">AI Lecture Notes Generator</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Input Section -->
+        <div class="card">
+
+            <!-- Topic Input -->
+            <div class="form-group">
+                <label>Topic Name</label>
+                <input type="text" id="topic" placeholder="e.g. Neural Networks" />
+            </div>
+
+            <!-- Audio Upload -->
+            <div class="upload-area" id="uploadArea">
+                <svg class="upload-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+                <p class="upload-text">Drag and drop your audio file here</p>
+                <p class="upload-hint">Supports mp3, wav, m4a, webm</p>
+                <input type="file" id="audioFile" accept=".mp3,.wav,.m4a,.webm,.mp4" hidden />
+                <button class="browse-btn" onclick="document.getElementById('audioFile').click()">
+                    Browse File
+                </button>
+                <p class="file-name" id="fileName">No file selected</p>
+            </div>
+
+            <!-- Generate Button -->
+            <button class="generate-btn" id="generateBtn" onclick="generateNotes()">
+                Generate Notes
+            </button>
+
+        </div>
+
+        <!-- Loading State -->
+        <div class="card loading" id="loading" style="display:none;">
+            <div class="spinner"></div>
+            <p id="loadingText">Transcribing audio...</p>
+        </div>
+
+        <!-- Results Section -->
+        <div class="card" id="results" style="display:none;">
+
+            <!-- Notes Output -->
+            <div class="results-header">
+                <span class="results-title">📝 Your Notes</span>
+                <button class="export-btn" onclick="exportNotes()">⬇️ Export</button>
+            </div>
+
+            <!-- Transcript -->
+            <div class="section">
+                <p class="section-title">🎤 Transcript</p>
+                <p class="section-content" id="transcript"></p>
+            </div>
+
+            <!-- Notes -->
+            <div class="section">
+                <p class="section-title">📌 Structured Notes</p>
+                <pre class="notes-content" id="notes"></pre>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Show selected filename
+        document.getElementById('audioFile').addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : 'No file selected';
+            document.getElementById('fileName').textContent = fileName;
+        });
+
+        // Drag and drop
+        const uploadArea = document.getElementById('uploadArea');
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (file) {
+                document.getElementById('audioFile').files = e.dataTransfer.files;
+                document.getElementById('fileName').textContent = file.name;
+            }
+        });
+
+        // Generate notes function
+        async function generateNotes() {
+            const topic = document.getElementById('topic').value || 'Lecture Notes';
+            const audioFile = document.getElementById('audioFile').files[0];
+
+            if (!audioFile) {
+                alert('Please select an audio file first!');
+                return;
+            }
+
+            // Show loading, hide results
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('generateBtn').disabled = true;
+
+            // Loading messages
+            const messages = [
+                'Transcribing audio...',
+                'Summarizing content...',
+                'Formatting notes...'
+            ];
+            let i = 0;
+            const interval = setInterval(() => {
+                i = (i + 1) % messages.length;
+                document.getElementById('loadingText').textContent = messages[i];
+            }, 3000);
+
+            // Send to Flask backend
+            const formData = new FormData();
+            formData.append('audio', audioFile);
+            formData.append('topic', topic);
+
+            try {
+                const response = await fetch('/generate', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                clearInterval(interval);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('generateBtn').disabled = false;
+
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                    return;
+                }
+
+                // Show results
+                document.getElementById('transcript').textContent = data.transcript;
+                document.getElementById('notes').textContent = data.notes;
+                document.getElementById('results').style.display = 'block';
+
+            } catch (error) {
+                clearInterval(interval);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('generateBtn').disabled = false;
+                alert('Something went wrong. Please try again.');
+            }
+        }
+
+        // Export notes as text file
+        function exportNotes() {
+            const notes = document.getElementById('notes').textContent;
+            const blob = new Blob([notes], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'lecture-notes.txt';
+            a.click();
+        }
+    </script>
+
+</body>
+</html>
