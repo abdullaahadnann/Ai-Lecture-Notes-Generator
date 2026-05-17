@@ -37,7 +37,7 @@ def index():
 def generate():
     try:
         # Get topic from form
-        topic = request.form.get("topic", "Lecture Notes")
+        topic = request.form.get("topic", "")
 
         # Check if audio file was uploaded
         if "audio" not in request.files:
