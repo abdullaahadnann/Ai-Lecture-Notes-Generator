@@ -78,6 +78,9 @@
         </div>
 
     </div>
+    <div style="text-align:center; padding: 24px; font-size: 12px; color: #9b9bb0;">
+    Built with Whisper + BART &nbsp;|&nbsp; AI Lecture Notes Generator &nbsp;|&nbsp; 2025
+    </div>
 
     <script>
         // Show selected filename
@@ -161,6 +164,7 @@
                 document.getElementById('transcript').textContent = data.transcript;
                 document.getElementById('notes').textContent = data.notes;
                 document.getElementById('results').style.display = 'block';
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
 
             } catch (error) {
                 clearInterval(interval);
