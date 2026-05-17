@@ -1,3 +1,4 @@
+import re
 from transformers import BartForConditionalGeneration, BartTokenizer
 
 print("Loading your fine-tuned model...")
@@ -5,12 +6,41 @@ model = BartForConditionalGeneration.from_pretrained("./finetuned-bart")
 tokenizer = BartTokenizer.from_pretrained("./finetuned-bart")
 print("Model loaded!")
 
+def split_into_chunks(text, max_words=120):
+    # Split text into sentences first
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+    
+    chunks = []
+    current_chunk = []
+    current_word_count = 0
+
+    for sentence in sentences:
+        word_count = len(sentence.split())
+        
+        # If adding this sentence exceeds limit, save chunk and start new one
+        if current_word_count + word_count > max_words and current_chunk:
+            chunks.append(" ".join(current_chunk))
+            current_chunk = [sentence]
+            current_word_count = word_count
+        else:
+            current_chunk.append(sentence)
+            current_word_count += word_count
+
+    # Add the last chunk
+    if current_chunk:
+        chunks.append(" ".join(current_chunk))
+
+    return chunks
+
 def summarize_text(text):
-    max_chunk = 500
-    chunks = [text[i:i+max_chunk] for i in range(0, len(text), max_chunk)]
+    chunks = split_into_chunks(text, max_words=120)
+    
+    print(f"Processing {len(chunks)} chunks...")
     
     summaries = []
-    for chunk in chunks:
+    for i, chunk in enumerate(chunks):
+        print(f"Summarizing chunk {i+1}/{len(chunks)}...")
+        
         inputs = tokenizer(
             chunk,
             return_tensors="pt",
@@ -29,5 +59,5 @@ def summarize_text(text):
             skip_special_tokens=True
         )
         summaries.append(summary)
-    
+
     return " ".join(summaries)
