@@ -59,19 +59,19 @@
 
             <!-- Notes Output -->
             <div class="results-header">
-                <span class="results-title">📝 Your Notes</span>
+                <span class="results-title">Your Notes:</span>
                 <button class="export-btn" onclick="exportNotes()">⬇️ Export</button>
             </div>
 
             <!-- Transcript -->
             <div class="section">
-                <p class="section-title">🎤 Transcript</p>
+                <p class="section-title">Transcript:</p>
                 <p class="section-content" id="transcript"></p>
             </div>
 
             <!-- Notes -->
             <div class="section">
-                <p class="section-title">📌 Structured Notes</p>
+                <p class="section-title">Structured Notes:</p>
                 <pre class="notes-content" id="notes"></pre>
             </div>
 
@@ -79,9 +79,8 @@
 
     </div>
     <div style="text-align:center; padding: 24px; font-size: 12px; color: #9b9bb0;">
-    Built with Whisper + BART &nbsp;|&nbsp; AI Lecture Notes Generator &nbsp;|&nbsp; 2025
+    AI Notes Generator &nbsp;|&nbsp; Built with Whisper + BART &nbsp;|&nbsp; 2026
     </div>
-
     <script>
         // Show selected filename
         document.getElementById('audioFile').addEventListener('change', function() {
@@ -113,7 +112,7 @@
 
         // Generate notes function
         async function generateNotes() {
-            const topic = document.getElementById('topic').value || 'Lecture Notes';
+            const topic = document.getElementById('topic').value;
             const audioFile = document.getElementById('audioFile').files[0];
 
             if (!audioFile) {
