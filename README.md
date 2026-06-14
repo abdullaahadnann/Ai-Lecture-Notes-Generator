@@ -52,4 +52,4 @@ AI Lecture Notes Generator/
 - Python
 - HuggingFace Transformers
 - OpenAI Whisper
-- Flask (web UI coming soon)
+- Flask 
