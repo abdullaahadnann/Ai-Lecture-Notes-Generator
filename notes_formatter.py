@@ -64,22 +64,22 @@ def format_notes(summary, topic=""):
     # ============================================================
     lines = []
     
-    lines.append(f"📌 Topic: {title}")
+    lines.append(f"Topic: {title}")
     lines.append("=" * 40)
     
-    lines.append("\n📝 Key Points:")
+    lines.append("\nKey Points:")
     for sentence in sentences:
         if not sentence.endswith('.'):
             sentence += '.'
         lines.append(f"  • {sentence}")
     
     if found_terms:
-        lines.append("\n🔑 Key Terms:")
+        lines.append("\nKey Terms:")
         for term in found_terms:
             lines.append(f"  - {term}")
     
     lines.append("\n" + "=" * 40)
-    lines.append(f"📊 {len(sentences)} key points extracted")
+    lines.append(f"{len(sentences)} key points extracted")
     
     return "\n".join(lines)
 

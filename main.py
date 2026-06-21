@@ -4,18 +4,18 @@ from notes_formatter import format_notes
 
 def generate_notes_from_audio(audio_path, topic="Lecture Notes"):
     
-    print("\n🎤 Step 1: Transcribing audio...")
+    print("\nStep 1: Transcribing audio...")
     transcript = convert_audio_to_text(audio_path)
-    print("✅ Transcription done!")
+    print("Transcription done!")
     print(f"\nTranscript preview: {transcript[:200]}...")
 
-    print("\n🧠 Step 2: Summarizing transcript...")
+    print("\nStep 2: Summarizing transcript...")
     summary = summarize_text(transcript)
     print("✅ Summary done!")
 
-    print("\n📝 Step 3: Formatting notes...")
+    print("\nStep 3: Formatting notes...")
     notes = format_notes(summary, topic=topic)
-    print("✅ Notes ready!\n")
+    print("Notes ready!\n")
 
     return transcript, summary, notes
 

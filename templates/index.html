@@ -161,7 +161,17 @@
 
                 // Show results
                 document.getElementById('transcript').textContent = data.transcript;
-                document.getElementById('notes').textContent = data.notes;
+                const notesText = data.notes;
+                const highlighted = notesText
+                    .split('\n')
+                    .map(line => {
+                        if (line.includes('Topic:') || line.includes('Key Points:') || line.includes('Key Terms:')) {
+                            return `<span class="notes-heading">${line}</span>`;
+                        }
+                        return line;
+                    })
+                    .join('\n');
+                document.getElementById('notes').innerHTML = highlighted;
                 document.getElementById('results').style.display = 'block';
                 document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
 

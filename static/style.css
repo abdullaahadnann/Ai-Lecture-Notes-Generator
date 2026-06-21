@@ -238,3 +238,8 @@ body {
     white-space: pre-wrap;
     font-family: inherit;
 }
+
+.notes-heading {
+    color: #1a1a2e;
+    font-weight: bold;
+}
