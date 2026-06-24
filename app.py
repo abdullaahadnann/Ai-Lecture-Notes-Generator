@@ -5,7 +5,7 @@ from summarizer import summarize_text
 from notes_formatter import format_notes
 
 # ============================================================
-# STEP 1 — Create Flask app
+# CREATED FLASK APP
 # ============================================================
 app = Flask(__name__)
 
@@ -17,21 +17,21 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = {"mp3", "wav", "m4a", "webm", "mp4"}
 
 # ============================================================
-# STEP 2 — Helper function to check file type
+# Helper function to check file type
 # ============================================================
 def allowed_file(filename):
     return "." in filename and \
            filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # ============================================================
-# STEP 3 — Home route (loads the webpage)
+# Home route (loads the webpage)
 # ============================================================
 @app.route("/")
 def index():
     return render_template("index.html")
 
 # ============================================================
-# STEP 4 — Generate notes route (handles the upload)
+# Generate notes route (handles the upload)
 # ============================================================
 @app.route("/generate", methods=["POST"])
 def generate():
@@ -83,7 +83,7 @@ def generate():
         return jsonify({"error": str(e)}), 500
 
 # ============================================================
-# STEP 5 — Run the app
+# Runs the app
 # ============================================================
 if __name__ == "__main__":
     app.run(debug=True)

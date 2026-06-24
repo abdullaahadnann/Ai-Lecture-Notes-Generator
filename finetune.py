@@ -4,7 +4,7 @@ from transformers import BartForConditionalGeneration, BartTokenizer, Trainer, T
 from torch.utils.data import Dataset
 
 # ============================================================
-# STEP 1 — Load your dataset
+# LOADING DATASET
 # ============================================================
 with open("dataset.json", "r") as f:
     data = json.load(f)
@@ -12,7 +12,7 @@ with open("dataset.json", "r") as f:
 print(f"Loaded {len(data)} examples from dataset.json")
 
 # ============================================================
-# STEP 2 — Load BART model and tokenizer
+# LOADING BART AND TOKENIZER
 # ============================================================
 print("Loading BART model and tokenizer...")
 model_name = "facebook/bart-large-cnn"
@@ -21,7 +21,7 @@ model = BartForConditionalGeneration.from_pretrained(model_name)
 print("Model loaded!")
 
 # ============================================================
-# STEP 3 — Create a custom Dataset class
+# CUSTOM DATASET
 # ============================================================
 # This tells PyTorch how to read your data during training
 class LectureDataset(Dataset):
@@ -69,7 +69,7 @@ class LectureDataset(Dataset):
         }
 
 # ============================================================
-# STEP 4 — Split data into train and test sets
+# SPLITED DATA INTO TRAIN AND DATASETS
 # ============================================================
 # 80% training, 20% testing
 split = int(0.8 * len(data))
@@ -83,7 +83,7 @@ print(f"Training examples: {len(train_dataset)}")
 print(f"Testing examples:  {len(test_dataset)}")
 
 # ============================================================
-# STEP 5 — Set training settings
+# TRAINING SETTING
 # ============================================================
 training_args = TrainingArguments(
     output_dir="./finetuned-bart",   # where to save the model
@@ -100,7 +100,7 @@ training_args = TrainingArguments(
 )
 
 # ============================================================
-# STEP 6 — Create Trainer and start training
+# CREATED AND STARTED TRAINING
 # ============================================================
 trainer = Trainer(
     model=model,
@@ -115,7 +115,7 @@ print("Loss should go DOWN over time — that means the model is learning.")
 trainer.train()
 
 # ============================================================
-# STEP 7 — Save the fine-tuned model
+# SAVED THE FINE-TUNED MODEL
 # ============================================================
 print("Saving fine-tuned model...")
 model.save_pretrained("./finetuned-bart")
